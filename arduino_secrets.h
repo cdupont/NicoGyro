@@ -1,0 +1,2 @@
+#define SECRET_APP_EUI "000"
+#define SECRET_APP_KEY "000"
