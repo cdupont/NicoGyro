@@ -101,7 +101,6 @@ void loop() {
 //  Serial.println();
 
   
-  calculateWindSpeed();
   Serial.print(getWindSpeed());
   Serial.println(" Km/h");
   delay(2000);
