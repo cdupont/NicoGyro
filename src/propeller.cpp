@@ -35,12 +35,8 @@ void prop_setup() {
 // This function should be called at regular interval (e.g. every 2 seconds).
 void calculateWindSpeed() {
 
-  Serial.println(pulseCount);
   float rps = (1000 * pulseCount) / (2000 * 6.); // Rotations per seconds
-  Serial.println(rps);
   windSpeed = rps * propeller_calibration * 3.6; // wind speed calculation in Km/h
-  Serial.println(windSpeed);
-
   pulseCount = 0;
 }
 
