@@ -54,12 +54,16 @@ void loop() {
  
   float windSpeed = getWindSpeed();
   float windDirection = getWindDirection();
+  Serial.print("Wind speed: ");
   Serial.print(windSpeed);
   Serial.println(" Km/h");
+  Serial.print("Wind direction: ");
+  Serial.print(windDirection);
+  Serial.println(" Degrees");
 
   lpp.reset();
-  lpp.addGenericSensor(1, windSpeed); //Wind speed in Km/h
-  lpp.addDirection(2, windDirection); // Wind direction in degrees
+  lpp.addAnalogOutput(1, windSpeed); //Wind speed in Km/h
+  lpp.addAnalogOutput(2, windDirection); // Wind direction in degrees
 
   int err;
   modem.beginPacket();

@@ -28,13 +28,10 @@ float getWindDirection()
   bmm150_mag_data value;
   bmm.read_mag_data();
 
-  value.x = bmm.raw_mag_data.raw_datax;
   value.y = bmm.raw_mag_data.raw_datay;
   value.z = bmm.raw_mag_data.raw_dataz;
 
-  float xyHeading = atan2(value.x, value.y);
-  float zxHeading = atan2(value.z, value.x);
-  float heading = xyHeading;
+  float heading = atan2(value.z, value.y);
 
   if(heading < 0)
     heading += 2*PI;
@@ -42,12 +39,6 @@ float getWindDirection()
     heading -= 2*PI;
 
   float headingDegrees = heading * 180/M_PI;
-  float xyHeadingDegrees = xyHeading * 180 / M_PI;
-  float zxHeadingDegrees = zxHeading * 180 / M_PI;
- 
-  Serial.print("Heading: ");
-  Serial.println(headingDegrees);
-
   return(headingDegrees);
 
 }
