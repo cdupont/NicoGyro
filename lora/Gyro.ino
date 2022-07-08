@@ -62,8 +62,8 @@ void loop() {
   Serial.println(" Degrees");
 
   lpp.reset();
-  lpp.addAnalogOutput(1, windSpeed); //Wind speed in Km/h
-  lpp.addAnalogOutput(2, windDirection); // Wind direction in degrees
+  lpp.addAnalogInput(1, windSpeed); //Wind speed in Km/h
+  lpp.addAnalogInput(2, windDirection); // Wind direction in degrees
 
   int err;
   modem.beginPacket();
